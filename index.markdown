@@ -246,7 +246,7 @@ Construct a program by dragging&amp;dropping and reordering lines. The construct
 })();
 </script>
 
-## Parsons 5 (Turtle Grader)
+## Parsons 6 (Travelbag)
 Construct a program by dragging&amp;dropping and reordering lines. The constructed program should draw a triangle like shown below.
 <div id="Travelbag-sortableTrash" class="sortable-code"></div> 
 <div id="Travelbag-sortable" class="sortable-code"></div> 
