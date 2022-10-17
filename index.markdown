@@ -3,19 +3,19 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Multiple Parson's Problems on One Page
+title: Parson's problems programmering 1
 ---
 # Parsons Practice
 
-## Parsons 1 (Line Based Grader)
-Re-arrange the blocks below so they print out "Hello World!"
+## Parsons 1 (Travelbag)
+Re-arrange the blocks so you get a skeleton code of travelbag
 
-<div id="travelbag-sortableTrash" class="sortable-code"></div> 
-<div id="travelbag-sortable" class="sortable-code"></div> 
+<div id="Travelbag-sortableTrash" class="sortable-code"></div> 
+<div id="Travelbag-sortable" class="sortable-code"></div> 
 <div style="clear:both;"></div> 
 <p> 
-    <input id="travelbag-feedbackLink" value="Get Feedback" type="button" /> 
-    <input id="travelbag-newInstanceLink" value="Reset Problem" type="button" /> 
+    <input id="Travelbag-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="Travelbag-newInstanceLink" value="Reset Problem" type="button" /> 
 </p> 
 <script type="text/javascript"> 
 (function(){
@@ -34,7 +34,7 @@ Re-arrange the blocks below so they print out "Hello World!"
     "   elif menyval == &quot;4&quot;:\n" +
     "       break";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "travelbag-sortable",
+    "sortableId": "Travelbag-sortable",
     "max_wrong_lines": 10,
     "grader": ParsonsWidget._graders.LineBasedGrader,
     "exec_limit": 2500,
@@ -45,11 +45,11 @@ Re-arrange the blocks below so they print out "Hello World!"
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#travelbag-newInstanceLink").click(function(event){ 
+  $("#Travelbag-newInstanceLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.shuffleLines(); 
   }); 
-  $("#travelbag-feedbackLink").click(function(event){ 
+  $("#Travelbag-feedbackLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.getFeedback(); 
   }); 
