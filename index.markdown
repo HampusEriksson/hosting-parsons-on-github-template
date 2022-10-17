@@ -254,3 +254,48 @@ If want each problem to be it's own page, you can use relative path links at the
 
 ### Example Next Link
 [Next](./parsons/example1.html)
+<div id="Travelbag-sortableTrash" class="sortable-code"></div> 
+<div id="Travelbag-sortable" class="sortable-code"></div> 
+<div style="clear:both;"></div> 
+<p> 
+    <input id="Travelbag-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="Travelbag-newInstanceLink" value="Reset Problem" type="button" /> 
+</p> 
+<script type="text/javascript"> 
+(function(){
+  var initial = "travelbag = []\n" +
+    "while True:\n" +
+    "   menyval = input(&quot;1. Kolla i resväskan\n&quot;\n" +
+    "                   &quot;2. Lägg sak i resväskan\n&quot;\n" +
+    "                   &quot;3. Ta bort sak i resväskan\n&quot;\n" +
+    "                   &quot;4. Avsluta program&quot;)\n" +
+    "   if menyval == &quot;1&quot;:\n" +
+    "       pass\n" +
+    "   elif menyval == &quot;2&quot;:\n" +
+    "       pass\n" +
+    "   elif menyval == &quot;3&quot;:\n" +
+    "       pass\n" +
+    "   elif menyval == &quot;4&quot;:\n" +
+    "       break";
+  var parsonsPuzzle = new ParsonsWidget({
+    "sortableId": "Travelbag-sortable",
+    "max_wrong_lines": 10,
+    "grader": ParsonsWidget._graders.LineBasedGrader,
+    "exec_limit": 2500,
+    "can_indent": true,
+    "x_indent": 50,
+    "lang": "en",
+    "show_feedback": true
+  });
+  parsonsPuzzle.init(initial);
+  parsonsPuzzle.shuffleLines();
+  $("#Travelbag-newInstanceLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.shuffleLines(); 
+  }); 
+  $("#Travelbag-feedbackLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.getFeedback(); 
+  }); 
+})(); 
+</script>
