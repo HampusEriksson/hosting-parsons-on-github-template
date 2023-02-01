@@ -40,28 +40,7 @@ title: Multiple Parson's Problems on One Page
     "class Elephant(Animal):\n" +
     "    def __init__(self, length, weight, age, gender, trunk_length):\n" +
     "        super(Elephant, self).__init__(length, weight, age, gender, &quot;Elephant&quot;)\n" +
-    "        self.trunk_length = trunk_length\n" +
-    "class Pokemon:\n" +
-    "    def __init__(self, name, hp, level=1):\n" +
-    "        self.name = name\n" +
-    "        self.hp = hp\n" +
-    "        self.level = level\n" +
-    "        self.happiness = -2\n" +
-    "    def __str__(self):\n" +
-    "        return f&quot;Name: {self.name} \nHP: {self.hp} \nLevel: {self.level}&quot;\n" +
-    "    def levelup(self):\n" +
-    "        self.level += 1\n" +
-    "        self.hp = round(self.hp * 1.05)\n" +
-    "        self.happiness -= 1\n" +
-    "        print(f&quot;{self.name} has leveled up to level {self.level}.&quot;)\n" +
-    "class Elev:\n" +
-    "    def __init__(self, name, grade, personnr):\n" +
-    "        self.name = name\n" +
-    "        self.grade = grade\n" +
-    "        self.personnr = personnr\n" +
-    "    def raise_grade(self):\n" +
-    "        self.grade += 1\n" +
-    "        print(f&quot;Grade raised to {self.grade}&quot;)";
+    "        self.trunk_length = trunk_length";
   var parsonsPuzzle = new ParsonsWidget({
     "sortableId": "sortable",
     "max_wrong_lines": 10,
