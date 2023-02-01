@@ -5,7 +5,7 @@
 layout: default
 title: Multiple Parson's Problems on One Page
 ---
-# Parsons Practice
+# Parsons - Programmering 2
 
 ## Blandade klasser
 
