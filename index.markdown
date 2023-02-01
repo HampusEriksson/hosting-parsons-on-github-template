@@ -7,100 +7,82 @@ title: Multiple Parson's Problems on One Page
 ---
 # Parsons Practice
 
-## Parsons 2 (Variable Check Grader)
-Construct a program that swaps the values of variables <code>x</code> and <code>y</code> using the helper variable <code>tmp</code>. You can change the names of the variables (<span class="jsparson-toggle"></span>) by clicking them.
+## Blandade klasser
 
-<div id="p2-sortableTrash" class="sortable-code"></div>
-<div id="p2-sortable" class="sortable-code"></div>
-<div style="clear:both;"></div>
-<p>
-    <input id="p2-feedbackLink" value="Get Feedback" type="button" />
-    <input id="p2-newInstanceLink" value="Reset Problem" type="button" />
-</p>
-<script type="text/javascript">
+
+<div id="sortableTrash" class="sortable-code"></div> 
+<div id="sortable" class="sortable-code"></div> 
+<div style="clear:both;"></div> 
+<p> 
+    <input id="feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="newInstanceLink" value="Reset Problem" type="button" /> 
+</p> 
+<script type="text/javascript"> 
 (function(){
-  var initial = "$$toggle::x::y::tmp$$ = $$toggle::x::y::tmp$$\n" +
-    "$$toggle::x::y::tmp$$ = $$toggle::x::y::tmp$$\n" +
-    "$$toggle::x::y::tmp$$ = $$toggle::x::y::tmp$$";
+  var initial = "class Animal:\n" +
+    "    def __init__(self, length, weight, age, gender, species):\n" +
+    "        self.length = length\n" +
+    "        self.weight = weight\n" +
+    "        self.age = age\n" +
+    "        self.gender = gender\n" +
+    "        self.species = species\n" +
+    "    def age_up(self):\n" +
+    "        self.age += 1\n" +
+    "class Fish(Animal):\n" +
+    "    def __init__(self, length, weight, age, gender, fin_count, watertype):\n" +
+    "        super(Fish, self).__init__(length, weight, age, gender, &quot;Fish&quot;)\n" +
+    "        self.fin_count = fin_count\n" +
+    "        self.watertype = watertype\n" +
+    "class Monkey(Animal):\n" +
+    "    def __init__(self, length, weight, age, gender, tail_length):\n" +
+    "        super(Monkey, self).__init__(length, weight, age, gender, &quot;Monkey&quot;)\n" +
+    "        self.tail_length = tail_length\n" +
+    "class Elephant(Animal):\n" +
+    "    def __init__(self, length, weight, age, gender, trunk_length):\n" +
+    "        super(Elephant, self).__init__(length, weight, age, gender, &quot;Elephant&quot;)\n" +
+    "        self.trunk_length = trunk_length\n" +
+    "class Pokemon:\n" +
+    "    def __init__(self, name, hp, level=1):\n" +
+    "        self.name = name\n" +
+    "        self.hp = hp\n" +
+    "        self.level = level\n" +
+    "        self.happiness = -2\n" +
+    "    def __str__(self):\n" +
+    "        return f&quot;Name: {self.name} \nHP: {self.hp} \nLevel: {self.level}&quot;\n" +
+    "    def levelup(self):\n" +
+    "        self.level += 1\n" +
+    "        self.hp = round(self.hp * 1.05)\n" +
+    "        self.happiness -= 1\n" +
+    "        print(f&quot;{self.name} has leveled up to level {self.level}.&quot;)\n" +
+    "class Elev:\n" +
+    "    def __init__(self, name, grade, personnr):\n" +
+    "        self.name = name\n" +
+    "        self.grade = grade\n" +
+    "        self.personnr = personnr\n" +
+    "    def raise_grade(self):\n" +
+    "        self.grade += 1\n" +
+    "        print(f&quot;Grade raised to {self.grade}&quot;)";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "p2-sortable",
+    "sortableId": "sortable",
     "max_wrong_lines": 10,
-    "grader": ParsonsWidget._graders.VariableCheckGrader,
+    "grader": ParsonsWidget._graders.LineBasedGrader,
     "exec_limit": 2500,
     "can_indent": true,
     "x_indent": 50,
     "lang": "en",
-    "trashId": "p2-sortableTrash",
-    "vartests": [
-        {
-            "message": "Testing with initial variable values x = 3 and y = 4",
-            "initcode": "x = 3\ny = 4",
-            "code": "",
-            "variables": {}
-        },
-        {
-            "message": "Testing with initial variable values x = 0 and y = 2",
-            "initcode": "x = 0\ny = 2",
-            "code": "",
-            "variables": {}
-        }
-    ]
+    "show_feedback": true
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#p2-newInstanceLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.shuffleLines();
-  });
-  $("#p2-feedbackLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.getFeedback();
- });
-})();
-</script>
-
-## Parsons 3 (Unit Test Grader)
-Your task is to construct a function which returns the index of the largest element in the array.
-
-<div id="p3-sortableTrash" class="sortable-code"></div>
-<div id="p3-sortable" class="sortable-code"></div>
-<div style="clear:both;"></div>
-<p>
-    <input id="p3-feedbackLink" value="Get Feedback" type="button" />
-    <input id="p3-newInstanceLink" value="Reset Problem" type="button" />
-</p>
-<script type="text/javascript">
-(function(){
-  var initial = "def maxindex(arg):\n" +
-    " ans = 0\n" +
-    " for i in range(len(arg)):\n" +
-    " if arg[i] > arg[ans]:\n" +
-    " ans = i\n" +
-    " while True:\n" +
-    "pass\n" +
-    " return ans";
-  var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "p3-sortable",
-    "max_wrong_lines": 10,
-    "grader": ParsonsWidget._graders.UnitTestGrader,
-    "exec_limit": 2500,
-    "can_indent": true,
-    "x_indent": 50,
-    "lang": "en",
-    "trashId": "p3-sortableTrash",
-    "unittests": "import unittestparson\nclass myTests(unittestparson.unittest):\n  def test_0(self):\n    self.assertEqual(,,)\n_test_result = myTests().main()"
-  });
-  parsonsPuzzle.init(initial);
-  parsonsPuzzle.shuffleLines();
-  $("#p3-newInstanceLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.shuffleLines();
-  });
-  $("#p3-feedbackLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.getFeedback();
-  });
-})();
+  $("#newInstanceLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.shuffleLines(); 
+  }); 
+  $("#feedbackLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.getFeedback(); 
+  }); 
+})(); 
 </script>
 
 
